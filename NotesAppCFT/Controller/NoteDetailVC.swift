@@ -9,21 +9,25 @@ import UIKit
 import CoreData
 
 class NoteDetailVC: UIViewController {
-
+    
+//MARK: Outlets
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var descriptionTextField: UITextView!
+    @IBOutlet weak var descriptionTextView: UITextView!
     
+//MARK: Properties
     var selectedNote: Note? = nil
-    
+
+//MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         if(selectedNote != nil)
         {
             titleTextField.text = selectedNote?.title
-            descriptionTextField.text = selectedNote?.desc
+            descriptionTextView.text = selectedNote?.descr
         }
     }
 
+//MARK: Save action
     @IBAction func saveAction(_ sender: Any) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
@@ -33,7 +37,7 @@ class NoteDetailVC: UIViewController {
             let newNote = Note(entity: entity!, insertInto: context)
             newNote.id = noteList.count as NSNumber
             newNote.title = titleTextField.text
-            newNote.desc = descriptionTextField.text
+            newNote.descr = descriptionTextView.text
             do
             {
                 try context.save()
@@ -45,7 +49,7 @@ class NoteDetailVC: UIViewController {
                 print("context save error")
             }
         }
-        else //edit
+        else
         {
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
             do {
@@ -56,7 +60,7 @@ class NoteDetailVC: UIViewController {
                     if(note == selectedNote)
                     {
                         note.title = titleTextField.text
-                        note.desc = descriptionTextField.text
+                        note.descr = descriptionTextView.text
                         try context.save()
                         navigationController?.popViewController(animated: true)
                     }
@@ -69,6 +73,7 @@ class NoteDetailVC: UIViewController {
         }
     }
     
+//MARK: Delete action
     @IBAction func DeleteNote(_ sender: Any)
     {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate

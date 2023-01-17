@@ -11,7 +11,7 @@ import CoreData
 class Note: NSManagedObject {
     @NSManaged var id: NSNumber!
     @NSManaged var title: String!
-    @NSManaged var desc: String!
+    @NSManaged var descr: String!
     @NSManaged var deletedDate: Date?
-
+    
 }

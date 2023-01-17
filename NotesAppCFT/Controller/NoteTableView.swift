@@ -12,19 +12,13 @@ var noteList = [Note]()
 
 class NoteTableView: UITableViewController
 {
+//MARK: Properties
     var firstLoad = true
     
-    func nonDeletedNotes() -> [Note]
+//MARK: Lifecycle
+    override func viewDidAppear(_ animated: Bool)
     {
-        var noDeleteNoteList = [Note]()
-        for note in noteList
-        {
-            if(note.deletedDate == nil)
-            {
-                noDeleteNoteList.append(note)
-            }
-        }
-        return noDeleteNoteList
+        tableView.reloadData()
     }
     
     override func viewDidLoad()
@@ -49,8 +43,22 @@ class NoteTableView: UITableViewController
             }
         }
     }
+
+//MARK: Methods
+    func nonDeletedNotes() -> [Note]
+    {
+        var noDeleteNoteList = [Note]()
+        for note in noteList
+        {
+            if(note.deletedDate == nil)
+            {
+                noDeleteNoteList.append(note)
+            }
+        }
+        return noDeleteNoteList
+    }
     
-    
+//MARK: tableView methods
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let noteCell = tableView.dequeueReusableCell(withIdentifier: "noteCellID", for: indexPath) as! NoteCell
@@ -59,7 +67,7 @@ class NoteTableView: UITableViewController
         thisNote = nonDeletedNotes()[indexPath.row]
         
         noteCell.titleLabel.text = thisNote.title
-        noteCell.descriptionLabel.text = thisNote.desc
+        noteCell.descriptionLabel.text = thisNote.descr
         
         return noteCell
     }
@@ -70,16 +78,13 @@ class NoteTableView: UITableViewController
         return nonDeletedNotes().count
     }
     
-    override func viewDidAppear(_ animated: Bool)
-    {
-        tableView.reloadData()
-    }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         self.performSegue(withIdentifier: "editNote", sender: self)
     }
     
+    
+//MARK: Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if(segue.identifier == "editNote")
