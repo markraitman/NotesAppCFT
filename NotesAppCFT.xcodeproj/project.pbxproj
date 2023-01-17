@@ -9,23 +9,29 @@
 /* Begin PBXBuildFile section */
 		A23879E92976BF07006D648E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23879E82976BF07006D648E /* AppDelegate.swift */; };
 		A23879EB2976BF07006D648E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23879EA2976BF07006D648E /* SceneDelegate.swift */; };
-		A23879ED2976BF07006D648E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23879EC2976BF07006D648E /* ViewController.swift */; };
 		A23879F02976BF07006D648E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A23879EE2976BF07006D648E /* Main.storyboard */; };
 		A23879F32976BF07006D648E /* NotesAppCFT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A23879F12976BF07006D648E /* NotesAppCFT.xcdatamodeld */; };
 		A23879F52976BF0B006D648E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A23879F42976BF0B006D648E /* Assets.xcassets */; };
 		A23879F82976BF0B006D648E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A23879F62976BF0B006D648E /* LaunchScreen.storyboard */; };
+		A2387A002976C45E006D648E /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23879FF2976C45E006D648E /* NoteCell.swift */; };
+		A2387A022976C47B006D648E /* NoteTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2387A012976C47B006D648E /* NoteTableView.swift */; };
+		A2387A042976C98A006D648E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2387A032976C98A006D648E /* Note.swift */; };
+		A2387A2F2976F1C0006D648E /* NoteDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2387A2E2976F1C0006D648E /* NoteDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A23879E52976BF07006D648E /* NotesAppCFT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesAppCFT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A23879E82976BF07006D648E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A23879EA2976BF07006D648E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A23879EC2976BF07006D648E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A23879EF2976BF07006D648E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A23879F22976BF07006D648E /* NotesAppCFT.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NotesAppCFT.xcdatamodel; sourceTree = "<group>"; };
 		A23879F42976BF0B006D648E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A23879F72976BF0B006D648E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A23879F92976BF0B006D648E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A23879FF2976C45E006D648E /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		A2387A012976C47B006D648E /* NoteTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableView.swift; sourceTree = "<group>"; };
+		A2387A032976C98A006D648E /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		A2387A2E2976F1C0006D648E /* NoteDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +66,10 @@
 			children = (
 				A23879E82976BF07006D648E /* AppDelegate.swift */,
 				A23879EA2976BF07006D648E /* SceneDelegate.swift */,
-				A23879EC2976BF07006D648E /* ViewController.swift */,
+				A2387A2E2976F1C0006D648E /* NoteDetailVC.swift */,
+				A23879FF2976C45E006D648E /* NoteCell.swift */,
+				A2387A012976C47B006D648E /* NoteTableView.swift */,
+				A2387A032976C98A006D648E /* Note.swift */,
 				A23879EE2976BF07006D648E /* Main.storyboard */,
 				A23879F42976BF0B006D648E /* Assets.xcassets */,
 				A23879F62976BF0B006D648E /* LaunchScreen.storyboard */,
@@ -141,8 +150,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A23879ED2976BF07006D648E /* ViewController.swift in Sources */,
+				A2387A022976C47B006D648E /* NoteTableView.swift in Sources */,
+				A2387A2F2976F1C0006D648E /* NoteDetailVC.swift in Sources */,
+				A2387A042976C98A006D648E /* Note.swift in Sources */,
 				A23879E92976BF07006D648E /* AppDelegate.swift in Sources */,
+				A2387A002976C45E006D648E /* NoteCell.swift in Sources */,
 				A23879EB2976BF07006D648E /* SceneDelegate.swift in Sources */,
 				A23879F32976BF07006D648E /* NotesAppCFT.xcdatamodeld in Sources */,
 			);
