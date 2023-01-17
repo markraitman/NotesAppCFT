@@ -49,7 +49,6 @@
 			isa = PBXGroup;
 			children = (
 				A23879E72976BF07006D648E /* NotesAppCFT */,
-				A2387A332976FF3A006D648E /* App */,
 				A23879E62976BF07006D648E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,6 +64,11 @@
 		A23879E72976BF07006D648E /* NotesAppCFT */ = {
 			isa = PBXGroup;
 			children = (
+				A23879E82976BF07006D648E /* AppDelegate.swift */,
+				A23879EA2976BF07006D648E /* SceneDelegate.swift */,
+				A23879F42976BF0B006D648E /* Assets.xcassets */,
+				A23879F12976BF07006D648E /* NotesAppCFT.xcdatamodeld */,
+				A23879F92976BF0B006D648E /* Info.plist */,
 				A2387A302976FEE0006D648E /* Model */,
 				A2387A322976FEF5006D648E /* Controller */,
 				A2387A312976FEED006D648E /* View */,
@@ -97,18 +101,6 @@
 				A2387A2E2976F1C0006D648E /* NoteDetailVC.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		A2387A332976FF3A006D648E /* App */ = {
-			isa = PBXGroup;
-			children = (
-				A23879E82976BF07006D648E /* AppDelegate.swift */,
-				A23879EA2976BF07006D648E /* SceneDelegate.swift */,
-				A23879F42976BF0B006D648E /* Assets.xcassets */,
-				A23879F92976BF0B006D648E /* Info.plist */,
-				A23879F12976BF07006D648E /* NotesAppCFT.xcdatamodeld */,
-			);
-			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +327,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_USE_OPTIMIZATION_PROFILE = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A32VY273J6;
@@ -363,6 +356,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_USE_OPTIMIZATION_PROFILE = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A32VY273J6;
